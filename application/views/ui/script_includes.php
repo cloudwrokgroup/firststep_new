@@ -29,6 +29,9 @@
 <script src="<?php echo asset_url()?>bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
 <script src="<?php echo asset_url()?>bower_components/fastclick/lib/fastclick.js"></script>
+<!-- jquery validation-->
+<script src="<?php echo asset_url()?>plugins/jquery.validate/jquery.validate.min.js"></script>
+<script src="<?php echo asset_url()?>plugins/jquery.validate/additional-methods.min.js"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo asset_url()?>dist/js/adminlte.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->

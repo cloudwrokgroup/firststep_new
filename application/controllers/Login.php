@@ -52,7 +52,7 @@ class Login extends CI_Controller {
 
                         $this->session->set_userdata('logged_in', $session_data);
                         //$this->load->view('home');
-                        redirect('home');
+                        redirect(portal_url().'home');
                     
                 }else{
                     $data['message']="your account has been locked please contact admin";

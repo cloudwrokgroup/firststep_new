@@ -1,3 +1,10 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+if (isset($this->session->userdata['logged_in']['username'])) {
+	header("Location: ".portal_url()."home"); /* Redirect browser */
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>

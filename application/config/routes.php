@@ -56,3 +56,5 @@ $route['login']['GET'] = 'login';
 $route['login']['POST'] = 'login/user_login_process';
 $route['logout']['GET'] = 'login/logout';
 $route['home']['GET'] = 'welcome';
+$route['department']['GET'] = 'welcome/department';
+$route['admin']['GET']='welcome/admin_user_details';
