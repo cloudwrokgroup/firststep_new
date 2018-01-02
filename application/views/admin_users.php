@@ -59,26 +59,30 @@
               <h3 class="box-title">List of Admin Users</h3>
             </div>    
             <div class="box-body">
-                <div class="table-responsive">
-                    <table class="table table-bordered table-striped">
+                
+                    <table id="data_table" class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>User Email</th>
-                                <th>User name</th>
+                                <th>Username</th>
+                                <th>User E-mail</th>
+                                <th>Password</th>
                                 <th>Department</th>
                                 <th>Option</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td></td>
-                                <td></td>
+                                <td>1</td>
+                                <td>kalaiselvan</td>
+                                <td>testing@gmail.com</td>
+                                <td>admin</td>
+                                <td>Testing</td>
                                 <td></td>
                             </tr>
                         </tbody>
                     </table>
-                </div>
+                
             </div>
           </div>    
         </div>
@@ -96,6 +100,10 @@ $("document").ready(function(){
                 minlength:4
             }
         }
+    })
+
+    $('#data_table').DataTable({
+        "lengthMenu":  [10, 25, 50, "All"]
     })
 });
 </script>
