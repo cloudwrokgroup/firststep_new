@@ -58,3 +58,6 @@ $route['logout']['GET'] = 'login/logout';
 $route['home']['GET'] = 'welcome';
 $route['department']['GET'] = 'welcome/department';
 $route['admin']['GET']='welcome/admin_user_details';
+$route['category']['GET']='welcome/category_details';
+$route['transport']['GET']='welcome/transport_details';
+$route['master']['GET']='welcome/country_state_city_master';
