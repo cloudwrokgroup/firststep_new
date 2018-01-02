@@ -4,7 +4,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Dashboard<small>/Admin Users</small>
+        Dashboard<small> / Admin Users</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo portal_url()?>"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -58,8 +58,7 @@
             <div class="box-header with-border">
               <h3 class="box-title">List of Admin Users</h3>
             </div>    
-            <div class="box-body">
-                
+            <div class="box-body">                
                     <table id="data_table" class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -68,7 +67,7 @@
                                 <th>User E-mail</th>
                                 <th>Password</th>
                                 <th>Department</th>
-                                <th>Option</th>
+                                <th>Options</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -78,11 +77,17 @@
                                 <td>testing@gmail.com</td>
                                 <td>admin</td>
                                 <td>Testing</td>
-                                <td></td>
+                                <td>
+                                <span class="btn btn-sm btn-warning">
+                                <i class="fa fa-edit"></i>
+                                </span>
+                                <span class="btn btn-sm btn-danger">
+                                <i class="fa fa-trash"></i>
+                                </span>
+                                </td>
                             </tr>
                         </tbody>
-                    </table>
-                
+                    </table>                
             </div>
           </div>    
         </div>
@@ -108,4 +113,4 @@ $("document").ready(function(){
 });
 </script>
 </body>
-</html>
+</html> 
