@@ -30,17 +30,10 @@ class Welcome extends CI_Controller {
 		$this->load->view('admin_users');
 	}
 
-	public function category_details(){
-		$this->load->view('category');
-	}
 
-	public function transport_details(){
-		$this->load->view('transports');
-	}
 
-	public function country_state_city_master(){
-		$this->load->view('countrystatecity');
-	}
+	
+
 
 	public function profits_master_details(){
 		$this->load->view('profits');

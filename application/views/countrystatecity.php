@@ -20,8 +20,6 @@
 			</div>
 			<!-- /.box-header -->
 			<!-- form start -->
-			<form action="" method="post" name="commodity_volume_form"
-				id="commodity_volume_form" enctype="multipart/form-data">
 				<div class="box-body">
 
 					<div class="nav-tabs-custom">
@@ -35,7 +33,7 @@
 						<div class="tab-content">
 							<div class="tab-pane active" id="tab_country">
 								<div class="row">
-									<form action="" method="post" name="country_form"
+									<form action="<?php echo portal_url()?>master_add_country" method="post" name="country_form"
 										id="country_form">
 										<div class="col-md-6">
 											<label class="col-md-5 control-label">Country Name</label>
@@ -144,14 +142,58 @@
 		<!-- /.box -->
 		<div class="box box-primary">
 			<div class="box-header with-border">
-				<h3 class="box-title">List of</h3>
+				<h3 class="box-title">List of Masters</h3>
 			</div>
 			<div class="box-body">
-				<div class="table-responsive">
-					<table class="table table-bordered table-striped">
-
-					</table>
-				</div>
+					<div class="nav-tabs-custom">
+						<ul class="nav nav-tabs">
+							<li class="active"><a href="#tab_country_data" data-toggle="tab">Country</a></li>
+							<li><a href="#tab_state_data" data-toggle="tab">State</a></li>
+							<li><a href="#tab_city_data" data-toggle="tab">City</a></li>
+							<li class="pull-right"><a href="#" class="text-muted"><i
+									class="fa fa-gear"></i></a></li>
+						</ul>
+						<div class="tab-content">
+							<div class="tab-pane active" id="tab_country_data">
+								<div class="table-responsive">
+									<table class="table table-bordered table-striped">
+										<thead>
+											<tr>
+												<th>#</th>
+												<th>Countrys</th>
+												<th>Option</th>
+											</tr>
+										</thead>
+										<tbody>
+											<?php $i = 0; 
+											foreach ($country as $c) { ?>    
+											<tr>
+												<td class="col-md-1"><?php echo ++$i; ?></td>
+												<td><?php echo $c->countryname; ?></td>
+												<td class="col-md-2">
+													<span class="btn btn-warning btn-sm" onclick="edit_country('<?php echo $c->id; ?>','<?php echo $c->countryname; ?>')"> <i class="fa fa-edit"></i></i></span>
+													<span class="btn btn-danger btn-sm"> <i class="fa fa-trash"></i></i></span>
+												</td>
+											</tr>
+											<?php
+											}
+											?>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<!-- /.tab-pane -->
+							<div class="tab-pane" id="tab_state_data">
+							
+							</div>
+							<!-- /.tab-pane -->
+							<div class="tab-pane" id="tab_city_data">
+								
+							</div>
+							<!-- /.tab-pane -->
+						</div>
+						<!-- /.tab-content -->
+					</div>
 			</div>
 		</div>
 	</div>
@@ -171,8 +213,7 @@ $("#country_form").validate({
 		}
 	},
 	submitHandler: function(form) {   
-	alert();
-		//$(form).submit();
+		$(form).submit();
 	}
 });
 $("#state_form").validate({
@@ -233,6 +274,10 @@ function load_state(element_id){
 	}else{
 		alert("Please Select Country!.");
 	}	
+}
+
+function edit_country(i,n){
+	
 }
 </script>
 </body>
