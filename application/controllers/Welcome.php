@@ -41,4 +41,12 @@ class Welcome extends CI_Controller {
 	public function country_state_city_master(){
 		$this->load->view('countrystatecity');
 	}
+
+	public function profits_master_details(){
+		$this->load->view('profits');
+	}
+
+	public function vehicle_type_details(){
+		$this->load->view('vehicletype');
+	}
 }

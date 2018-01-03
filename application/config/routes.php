@@ -61,3 +61,5 @@ $route['admin']['GET']='welcome/admin_user_details';
 $route['category']['GET']='welcome/category_details';
 $route['transport']['GET']='welcome/transport_details';
 $route['master']['GET']='welcome/country_state_city_master';
+$route['profits']['GET']='welcome/profits_master_details';
+$route['vehicle']='welcome/vehicle_type_details';
