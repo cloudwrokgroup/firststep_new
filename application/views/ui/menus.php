@@ -283,6 +283,16 @@
 									class="fa fa-circle-o"></i> Department</a></li>
 							<li><a href="<?php echo portal_url()?>admin"><i
 									class="fa fa-circle-o"></i> Admin Users</a></li>
+						    <li><a href="<?php echo portal_url()?>category"><i
+									class="fa fa-circle-o"></i> Category</a></li>
+							<li><a href="<?php echo portal_url()?>transport"><i
+									class="fa fa-circle-o"></i> Trasport</a></li>
+							<li><a href="<?php echo portal_url()?>master"><i
+									class="fa fa-circle-o"></i> master</a></li>									
+							<li><a href="<?php echo portal_url()?>profits"><i
+									class="fa fa-circle-o"></i> Profits</a></li>	
+							<li><a href="<?php echo portal_url()?>vehicle"><i
+									class="fa fa-circle-o"></i> vehicle</a></li>
 						</ul></li>
 				</ul>
 			</section>
