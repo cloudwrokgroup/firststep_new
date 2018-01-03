@@ -25,6 +25,15 @@ class BaseMaster extends CI_Controller {
 		 $this->load->view('countrystatecity',$data);
 	}
     
+    
+    public function print_response(){
+         $country=new Country_model;
+	     $data['country']=$country->get_Countrys();
+        $this->output
+                    ->set_content_type('application/json')
+                    ->set_output(json_encode($data));
+    }
+    
     public function check_duplicate_country(){
         $country=$_GET['country'];
         $result=$this->Country_model->add_new_country($country);

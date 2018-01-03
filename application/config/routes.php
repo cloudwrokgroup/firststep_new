@@ -63,6 +63,7 @@ $route['category']['POST']='category_details';
 $route['transport']['GET']='transport';
 $route['master']['GET']='baseMaster';
 $route['master_add_country']['POST']='baseMaster/master_add_country';
+$route['print_response']['GET']='baseMaster/print_response';
 $route['master_check_country']['GET']='baseMaster/check_duplicate_country';
 $route['profits']['GET']='profits';
 $route['vehicle']='vehicle';
