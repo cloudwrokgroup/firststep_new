@@ -63,6 +63,13 @@
 												<select class="input-sm form-control country"
 													name="state_country_name" id="state_country_name">
 													<option value="">-Select-</option>
+													<?php
+													foreach ($country as $c) { 
+												    ?>
+												    <option value="<?php echo $c->id?>"><?php echo $c->countryname?></option>
+												    <?php
+													}
+													?>
 												</select>
 											</div>
 										</div>
@@ -95,6 +102,13 @@
 													name="city_country_name" id="city_country_name"
 													onchange="load_state('city_country_name')">
 													<option value="">-Select-</option>
+													<?php
+													foreach ($country as $c) { 
+												    ?>
+												    <option value="<?php echo $c->id?>"><?php echo $c->countryname?></option>
+												    <?php
+													}
+													?>
 												</select>
 											</div>
 										</div>
@@ -204,7 +218,9 @@
 <?php include('ui/script_includes.php');?>
 <script>
 $("document").ready(function(){
-  
+
+	
+	  
 $("#country_form").validate({
 	rules: {
 		country_name: {
@@ -213,7 +229,20 @@ $("#country_form").validate({
 		}
 	},
 	submitHandler: function(form) {   
-		$(form).submit();
+		$.ajax({
+			url:'<?php echo portal_url()?>master_add_country',
+			data:$("#country_form").serialize(),
+		    method:"POST",
+			success:function(response){
+				if(response.status==="success"){
+					//load_country();
+					$("#country_form").reset();
+				}
+			},
+			error:function(response){
+				console.log(response);
+			}
+		});	
 	}
 });
 $("#state_form").validate({
@@ -253,10 +282,12 @@ $("#city_form").validate({
 function load_country(){
 	$.ajax({
 		type:"GET",
-		url:"load_Country",
+		url:"<?php echo portal_url()?>getCountry_list",
 		data:{},
 		success:function(data){
-			$(".country").html(data);
+		//	$(".country").html(data);
+
+		
 		}
 	});
 }

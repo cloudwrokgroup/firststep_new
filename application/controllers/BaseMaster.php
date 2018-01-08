@@ -20,13 +20,16 @@ class BaseMaster extends CI_Controller {
 	public function master_add_country(){
 	     $country=$_POST['country_name'];
 	     $result=$this->Country_model->add_new_country($country);
-	     $country=new Country_model;
-	     $data['country']=$country->get_Countrys();
-		 $this->load->view('countrystatecity',$data);
-	}
+	     $this->output
+	               ->set_content_type('application/json')
+	               ->set_output(json_encode(array(
+	                   "status"=>"success",
+	                   "message"=>"Country added successfully!.."
+	               )));
+	   	}
     
     
-    public function print_response(){
+    public function getCountry_list(){
          $country=new Country_model;
 	     $data['country']=$country->get_Countrys();
         $this->output
