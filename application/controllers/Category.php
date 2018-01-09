@@ -32,5 +32,22 @@ class Category extends CI_Controller {
     	               )));
 	    }
     }
+    
+    public function getCategory_list(){
+        $categorys=new Category_model;
+	    $data['data']=$categorys->getCategorys();
+        $this->output
+                    ->set_content_type('application/json')
+                    ->set_output(json_encode($data));
+        
+    }
+    
+    public function master_check_category(){
+          $category_name=$_GET['category_name'];
+          $result=$this->Category_model->check_category($category_name);
+          $this->output
+                    ->set_content_type('application/json')
+                    ->set_output(json_encode($result));
+    }
 	
 }

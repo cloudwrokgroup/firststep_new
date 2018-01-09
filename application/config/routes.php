@@ -90,6 +90,8 @@ $route['admin']['GET']='welcome/admin_user_details';
 //category related routes
 $route['category']['GET']='category';
 $route['master_add_category']['POST']='category/master_add_category';
+$route['getCategory_list']['GET']='category/getCategory_list';
+$route['master_check_category']['GET']='category/master_check_category';
 
 
 //transport related routes

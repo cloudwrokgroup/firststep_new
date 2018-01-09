@@ -7,4 +7,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  function portal_url(){
   return base_url().PORTAL_PREFIX;
  }
+ 
+ function image_url(){
+   return base_url().PORTAL_PREFIX.'images/';
+ }
 ?>
