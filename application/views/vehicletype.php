@@ -50,8 +50,16 @@
 			</div>
 			<div class="box-body">
 				<div class="table-responsive">
-					<table class="table table-bordered table-striped">
-
+					<table id="vehicletype_datatable" class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th class="col-md-1">#</th>
+								<th>Vehicle Type</th>
+								<th class="col-md-1">Option</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
 					</table>
 				</div>
 			</div>
@@ -63,20 +71,12 @@
 <?php include('ui/footer.php');?>
 <?php include('ui/script_includes.php');?>
 <script>
-$("document").ready(function(){
-  $("#vehicle_type_form").validate({
-	rules: {
-		country_name: {
-			required: true,
-			minlength:3
-		}
-	},
-	submitHandler: function(form) {   
-	alert();
-		//$(form).submit();
-	}
-  });
-});
+var cb=function(type,i){alert(type+"----"+i)};
+
+$("document").ready(function(){$("#vehicle_type_form").validate({rules: {vehicle_type: {required: true,minlength:3,remote: "<?php echo portal_url()?>master_check_vehicletype"}},submitHandler: function(form) {$.ajax({url:'<?php echo portal_url()?>master_add_vehicletype',data:$("#vehicle_type_form").serialize(),method:"POST",success:function(response){if(response.status==="success"){alert(response.message);$("#vehicle_type_form")[0].reset();$('#vehicletype_datatable').DataTable().destroy();ld();}},error:function(response){console.log(response);}});}});ld();});
+function ld(){$.ajax({url:'<?php echo portal_url()?>getVehicletypes_list',data:{},method:"GET",success:function(r){var d=r.data,i=0;$.each(d,function(i,o){var html="";html+="<button onclick='ev("+o.id+")' class='btn btn-xs btn-warning'><i class='fa fa-edit'></i></button>&nbsp;"+"<button onclick='dv("+o.id+")' class='btn btn-xs btn-danger'><i class='fa fa-trash'></i></button>",o['option']=html,o['count']=++i;});$('#vehicletype_datatable').DataTable( {"data": d,"columns":[{'data':'count'},{'data':'vehicletype'},{'data':'option'}]})},error:function(response){console.log(response);}});}
+function dv(i){cb("delete",i)};
+function ev(i){cb("edit",i)};
 </script>
 </body>
 </html>

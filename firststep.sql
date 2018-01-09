@@ -79,6 +79,14 @@ CREATE TABLE `country` (
 CREATE TABLE `department` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `department` varchar(100) DEFAULT NULL,
-  `isActive` enum('Active','Deactive','Hold') DEFAULT NULL,
+  `isActive` enum('Active','Deactive','Hold') DEFAULT 'Active',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `vehicle_type` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `vehicletype` varchar(100) DEFAULT NULL,
+  `isActive` enum('Active','Deactive','Hold') DEFAULT 'Active',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

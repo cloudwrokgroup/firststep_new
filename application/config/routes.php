@@ -63,6 +63,13 @@ $route['master_add_department']['POST']='department/master_add_department';
 $route['master_check_department']['GET']='department/master_check_department';
 $route['getDepartments_list']['GET']='department/getDepartments_list';
 
+//vehicle related routes
+$route['vehicle']='vehicle';
+$route['master_add_vehicletype']['POST']='vehicle/master_add_vehicletype';
+$route['master_check_vehicletype']['GET']='vehicle/master_check_vehicletype';
+$route['getVehicletypes_list']['GET']='vehicle/getVehicletypes_list';
+
+
 $route['admin']['GET']='welcome/admin_user_details';
 $route['category']['GET']='category';
 $route['category']['POST']='category_details';
@@ -72,4 +79,3 @@ $route['master_add_country']['POST']='baseMaster/master_add_country';
 $route['getCountry_list']['GET']='baseMaster/getCountry_list';
 $route['master_check_country']['GET']='baseMaster/check_duplicate_country';
 $route['profits']['GET']='profits';
-$route['vehicle']='vehicle';
