@@ -49,13 +49,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+//login related routes
 $route['login']['GET'] = 'login';
 $route['login']['POST'] = 'login/user_login_process';
 $route['logout']['GET'] = 'login/logout';
+
+//home or landing page related routes
 $route['home']['GET'] = 'welcome';
+
 
 //department related routes
 $route['department']['GET'] = 'department';
@@ -70,12 +76,25 @@ $route['master_check_vehicletype']['GET']='vehicle/master_check_vehicletype';
 $route['getVehicletypes_list']['GET']='vehicle/getVehicletypes_list';
 
 
-$route['admin']['GET']='welcome/admin_user_details';
-$route['category']['GET']='category';
-$route['category']['POST']='category_details';
-$route['transport']['GET']='transport';
+//base Master related router[country,state, city]
 $route['master']['GET']='baseMaster';
 $route['master_add_country']['POST']='baseMaster/master_add_country';
 $route['getCountry_list']['GET']='baseMaster/getCountry_list';
 $route['master_check_country']['GET']='baseMaster/check_duplicate_country';
+
+
+//admin related routes
+$route['admin']['GET']='welcome/admin_user_details';
+
+
+//category related routes
+$route['category']['GET']='category';
+$route['category']['POST']='category_details';
+
+
+//transport related routes
+$route['transport']['GET']='transport';
+
+
+//profits related routes
 $route['profits']['GET']='profits';
