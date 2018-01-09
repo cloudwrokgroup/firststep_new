@@ -75,35 +75,12 @@ $("document").ready(function(){
     $("#department_form").validate({
         rules:{department_name:{required:true,minlength:3,remote: "<?php echo portal_url()?>master_check_department"}},
 		submitHandler: function(form) {$.ajax({url:'<?php echo portal_url()?>master_add_department',data:$("#department_form").serialize(),method:"POST",
-		success:function(response){
-			if(response.status==="success"){
-				alert(response.message);
-				$("#department_form")[0].reset();
-				$('#department_datatable').DataTable().destroy();
-				load_datatable_department();
-		
-		}},
-		error:function(response){
-			console.log(response);
-		}});	
-	}});
-    load_datatable_department();
+		success:function(response){if(response.status==="success"){alert(response.message);$("#department_form")[0].reset();$('#department_datatable').DataTable().destroy();ld();}},error:function(response){console.log(response);}});}});ld();
 });
-
-function load_datatable_department(){
-	$.ajax({url:'<?php echo portal_url()?>getDepartments_list',data:{},method:"GET",success:function(response){
-		 var data=response.data;
-		 var i=0;
-		 $.each(data,function(index,obj){
-		   var html="";
-		   html+="<button onclick='editdepartment("+obj.id+")' class='btn btn-xs btn-warning'><i class='fa fa-edit'></i></button>&nbsp;"+
-		   "<button onclick='deletedepartment("+obj.id+")' class='btn btn-xs btn-danger'><i class='fa fa-trash'></i></button>";
-		   obj['option']=html;
-		   obj['count']=++i;
-		 });
-		 $('#department_datatable').DataTable( {"data": data,"columns":[{'data':'count'},{'data':'department'},{'data':'option'}]});
-		},
-		error:function(response){console.log(response);}
+function ld(){
+	$.ajax({url:'<?php echo portal_url()?>getDepartments_list',data:{},method:"GET",success:function(r){var d=r.data,i=0;
+		 $.each(data,function(i,o){var html="";html+="<button onclick='editdepartment("+o.id+")' class='btn btn-xs btn-warning'><i class='fa fa-edit'></i></button>&nbsp;"+"<button onclick='deletedepartment("+o.id+")' class='btn btn-xs btn-danger'><i class='fa fa-trash'></i></button>",o['option']=html,o['count']=++i;});
+		 $('#department_datatable').DataTable( {"data": d,"columns":[{'data':'count'},{'data':'department'},{'data':'option'}]})},error:function(response){console.log(response);}
 	});	
 }
 </script>
