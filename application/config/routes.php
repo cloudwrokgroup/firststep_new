@@ -98,3 +98,6 @@ $route['transport']['GET']='transport';
 
 //profits related routes
 $route['profits']['GET']='profits';
+$route['master_add_profits']['POST']='profits/master_add_profits';
+$route['getProfits_list']['GET']='profits/getProfits_list';
+$route['master_check_profit']['GET']='profits/master_check_profit';

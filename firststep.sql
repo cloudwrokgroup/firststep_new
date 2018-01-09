@@ -90,3 +90,11 @@ CREATE TABLE `vehicle_type` (
   `isActive` enum('Active','Deactive','Hold') DEFAULT 'Active',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `profit` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `profit` varchar(100) DEFAULT NULL,
+  `isActive` enum('Active','Deactive','Hold') DEFAULT 'Active',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

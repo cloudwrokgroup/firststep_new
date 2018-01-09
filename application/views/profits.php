@@ -55,8 +55,16 @@
 			</div>
 			<div class="box-body">
 				<div class="table-responsive">
-					<table class="table table-bordered table-striped">
-
+					<table id="profit_datatable" class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th class="col-md-1">#</th>
+								<th>Profit</th>
+								<th class="col-md-1">Option</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
 					</table>
 				</div>
 			</div>
@@ -68,9 +76,8 @@
 <?php include('ui/footer.php');?>
 <?php include('ui/script_includes.php');?>
 <script>
-$("document").ready(function(){
-  
-});
+$("document").ready(function(){$("#profits_form").validate({rules:{profits:{required:true,minlength:2,remote: "<?php echo portal_url()?>master_check_profit"}},submitHandler: function(form) {$.ajax({url:'<?php echo portal_url()?>master_add_profits',data:$("#profits_form").serialize(),method:"POST",success:function(response){if(response.status==="success"){alert(response.message);$("#profits_form")[0].reset();$('#profit_datatable').DataTable().destroy();ld();}},error:function(response){console.log(response);}});}});ld();});
+function ld(){$.ajax({url:'<?php echo portal_url()?>getProfits_list',data:{},method:"GET",success:function(r){var d=r.data,i=0;$.each(d,function(i,o){var html="";html+="<button onclick='ep("+o.id+")' class='btn btn-xs btn-warning'><i class='fa fa-edit'></i></button>&nbsp;"+"<button onclick='dp("+o.id+")' class='btn btn-xs btn-danger'><i class='fa fa-trash'></i></button>",o['option']=html,o['count']=++i;});$('#profit_datatable').DataTable( {"data": d,"columns":[{'data':'count'},{'data':'profit'},{'data':'option'}]})},error:function(response){console.log(response);}});}
 </script>
 </body>
 </html>
