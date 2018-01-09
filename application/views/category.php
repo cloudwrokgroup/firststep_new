@@ -20,14 +20,15 @@
 			</div>
 			<!-- /.box-header -->
 			<!-- form start -->
-			<form action="" method="post" name="category_form" id="category_form"
+			<?php echo form_open_multipart('upload/do_upload');?>
+			<form action="<?php echo portal_url()?>master_add_category" method="post" name="category_form" id="category_form"
 				enctype="multipart/form-data">
 				<div class="box-body">
 					<div class="col-md-6 form-group">
 						<label class="col-md-5 control-label">Category</label>
 						<div class="col-md-7">
-							<input type="text" class="input-sm form-control" name="category"
-								id="category" />
+							<input type="text" class="input-sm form-control" name="category_name"
+								id="category_name" />
 						</div>
 					</div>
 					<div class="col-md-6 form-group">
@@ -58,7 +59,7 @@
 			</div>
 			<div class="box-body">
 				<div class="table-responsive">
-					<table class="table table-bordered table-striped">
+					<table id="category_datatable" class="table table-bordered table-striped">
 
 					</table>
 				</div>
@@ -74,14 +75,34 @@
 $("document").ready(function(){
    $("#category_form").validate({
 	rules: {
-		category: {
+		category_name: {
 			required: true,
 			minlength:3
+		},
+		photo:{
+			required:true
 		}
 	},
 	submitHandler: function(form) {   
-	alert();
-		//$(form).submit();
+		$.ajax({
+			url:'<?php echo portal_url()?>master_add_category',
+			data:$("#category_form").serialize(),
+			method:"POST",
+			contentType: false,
+			cache: false,
+			processData:false, 
+			success:function(response){
+				console.log(response);
+				if(response.status==="success"){
+					alert(response.message);
+					$("#category_form")[0].reset();
+			    	//$('#category_datatable').DataTable().destroy();
+					//ld();
+				}
+		   },error:function(response){
+		    	console.log(response);   	
+		   }
+		})
 	}
    });
 });

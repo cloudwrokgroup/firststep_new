@@ -98,3 +98,12 @@ CREATE TABLE `profit` (
   `isActive` enum('Active','Deactive','Hold') DEFAULT 'Active',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `category` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `category` varchar(100) DEFAULT NULL,
+  `photo_name` varchar(100) DEFAULT NULL,
+  `isActive` enum('Active','Deactive','Hold') DEFAULT 'Active',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

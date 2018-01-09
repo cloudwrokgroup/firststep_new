@@ -3,8 +3,8 @@
 
 		<header class="main-header">
 			<!-- Logo -->
-			<a href="index2.html" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
-				<span class="logo-mini"><b>A</b>LT</span> <!-- logo for regular state and mobile devices -->
+			<a href="<?php echo portal_url()?>" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
+				<span class="logo-mini"><b>1`</b>st</span> <!-- logo for regular state and mobile devices -->
 				<span class="logo-lg"><b>First</b>Step</span>
 			</a>
 			<!-- Header Navbar: style can be found in header.less -->
@@ -279,20 +279,22 @@
 						</span>
 					</a>
 						<ul class="treeview-menu">
-							<li class="active"><a href="<?php echo portal_url()?>department"><i
-									class="fa fa-circle-o"></i> Department</a></li>
+							<li><a href="<?php echo portal_url()?>master"><i
+									class="fa fa-circle-o"></i> Master</a></li>									
 							<li><a href="<?php echo portal_url()?>admin"><i
 									class="fa fa-circle-o"></i> Admin Users</a></li>
+							<li class="active"><a href="<?php echo portal_url()?>department"><i
+									class="fa fa-circle-o"></i> Department</a></li>
 						    <li><a href="<?php echo portal_url()?>category"><i
 									class="fa fa-circle-o"></i> Category</a></li>
 							<li><a href="<?php echo portal_url()?>transport"><i
 									class="fa fa-circle-o"></i> Trasport</a></li>
-							<li><a href="<?php echo portal_url()?>master"><i
-									class="fa fa-circle-o"></i> master</a></li>									
 							<li><a href="<?php echo portal_url()?>profits"><i
 									class="fa fa-circle-o"></i> Profits</a></li>	
 							<li><a href="<?php echo portal_url()?>vehicle"><i
-									class="fa fa-circle-o"></i> vehicle</a></li>
+									class="fa fa-circle-o"></i> Vehicle</a></li>
+							<li><a href="<?php echo portal_url()?>product"><i
+									class="fa fa-circle-o"></i> Product</a></li>
 						</ul></li>
 				</ul>
 			</section>

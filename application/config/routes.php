@@ -89,7 +89,7 @@ $route['admin']['GET']='welcome/admin_user_details';
 
 //category related routes
 $route['category']['GET']='category';
-$route['category']['POST']='category_details';
+$route['master_add_category']['POST']='category/master_add_category';
 
 
 //transport related routes
@@ -101,3 +101,8 @@ $route['profits']['GET']='profits';
 $route['master_add_profits']['POST']='profits/master_add_profits';
 $route['getProfits_list']['GET']='profits/getProfits_list';
 $route['master_check_profit']['GET']='profits/master_check_profit';
+
+
+//product related routes
+$route['product']['GET']='product';
+$route['product']['POST']='product/master_add_product';
