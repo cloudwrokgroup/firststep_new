@@ -22,10 +22,7 @@ class Welcome extends CI_Controller {
 		$this->load->view('home');
 	}
 
-	public function department(){
-		$this->load->view('department');
-	}
-
+	
 	public function admin_user_details(){
 		$this->load->view('admin_users');
 	}

@@ -75,3 +75,10 @@ CREATE TABLE `country` (
   `cby` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `department` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `department` varchar(100) DEFAULT NULL,
+  `isActive` enum('Active','Deactive','Hold') DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

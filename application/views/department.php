@@ -50,7 +50,7 @@
 			</div>
 			<div class="box-body">
 				<div class="table-responsive">
-					<table class="table table-bordered table-striped">
+					<table id="department_datatable" class="table table-bordered table-striped">
 						<thead>
 							<tr>
 								<th>#</th>
@@ -58,7 +58,7 @@
 								<th>Option</th>
 							</tr>
 						</thead>
-						<tbody>
+						<tbody id="">
 							<tr>
 								<td></td>
 								<td></td>
@@ -81,11 +81,60 @@ $("document").ready(function(){
         rules:{
             department_name:{
                 required:true,
-                minlength:4
+                minlength:3,
+                remote: "<?php echo portal_url()?>master_check_department"
             }
-        }
+        },
+		submitHandler: function(form) {   
+			$.ajax({
+				url:'<?php echo portal_url()?>master_add_department',
+				data:$("#department_form").serialize(),
+			    method:"POST",
+				success:function(response){
+					if(response.status==="success"){
+						alert(response.message);
+						$("#department_form")[0].reset();
+						$('#department_datatable').DataTable().destroy();
+						load_datatable_department();
+					
+					}
+				},
+				error:function(response){
+					console.log(response);
+				}
+			});	
+	}
     })
+    load_datatable_department();
 });
+
+function load_datatable_department(){
+	$.ajax({
+		url:'<?php echo portal_url()?>getDepartments_list',
+		data:{},
+	    method:"GET",
+		success:function(response){
+		     var data=response.data;
+			 $.each(data,function(index,obj){
+			   var html="";
+			   html+="<button onclick='editdepartment("+obj.id+")' class='btn btn-xs btn-warning'><i class='fa fa-edit'></i></button>";
+			   obj['option']=html;
+			 });
+			 
+			 $('#department_datatable').DataTable( {
+		        "data": data,
+		        "columns":[					
+					{'data':'id'},
+					{'data':'department'},
+        			{'data':'option'}
+				],  
+		     });
+		},
+		error:function(response){
+			console.log(response);
+		}
+	});	
+}
 </script>
 </body>
 </html>

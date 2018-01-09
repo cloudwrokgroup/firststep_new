@@ -56,7 +56,13 @@ $route['login']['GET'] = 'login';
 $route['login']['POST'] = 'login/user_login_process';
 $route['logout']['GET'] = 'login/logout';
 $route['home']['GET'] = 'welcome';
-$route['department']['GET'] = 'welcome/department';
+
+//department related routes
+$route['department']['GET'] = 'department';
+$route['master_add_department']['POST']='department/master_add_department';
+$route['master_check_department']['GET']='department/master_check_department';
+$route['getDepartments_list']['GET']='department/getDepartments_list';
+
 $route['admin']['GET']='welcome/admin_user_details';
 $route['category']['GET']='category';
 $route['category']['POST']='category_details';
