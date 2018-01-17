@@ -273,7 +273,7 @@
 				<!-- sidebar menu: : style can be found in sidebar.less -->
 				<ul class="sidebar-menu" data-widget="tree">
 					<li class="header">MAIN NAVIGATION</li>
-					<li class="active treeview"><a href="#"> <i class="fa fa-dashboard"></i>
+					<li class="treeview"><a href="#"> <i class="fa fa-dashboard"></i>
 							<span>Dashboard</span> <span class="pull-right-container"> <i
 								class="fa fa-angle-left pull-right"></i>
 						</span>
@@ -296,6 +296,144 @@
 							<li><a href="<?php echo portal_url()?>product"><i
 									class="fa fa-circle-o"></i> Product</a></li>
 						</ul></li>
+						<li class="treeview">
+							<a href="#"> <i class="fa fa-users"></i>
+								<span>Users</span> <span class="pull-right-container"> <i
+									class="fa fa-angle-left pull-right"></i>
+								</span>
+							</a>
+							<ul class="treeview-menu">
+								<li><a href="<?php echo portal_url()?>master"><i
+										class="fa fa-circle-o"></i> Master</a></li>									
+							</ul>
+						</li>
+						<li class="treeview">
+							<a href="#"> <i class="fa fa-dashboard"></i>
+								<span>Commodities</span> <span class="pull-right-container"> <i
+									class="fa fa-angle-left pull-right"></i>
+								</span>
+							</a>
+							<ul class="treeview-menu">
+							<!--	<li><a href="<?php echo portal_url()?>master"><i
+										class="fa fa-circle-o"></i> Master</a></li>									-->
+							</ul>
+						</li>
+						<li class="treeview">
+							<a href="#"> <i class="fa fa-truck"></i>
+								<span>Transportation</span> <span class="pull-right-container"> <i
+									class="fa fa-angle-left pull-right"></i>
+								</span>
+							</a>
+							<ul class="treeview-menu">
+							<!--	<li><a href="<?php echo portal_url()?>master"><i
+										class="fa fa-circle-o"></i> Master</a></li>									-->
+							</ul>
+						</li>
+						<li class="treeview">
+							<a href="#"> <i class="fa fa-file-text-o"></i>
+								<span>Billing</span> <span class="pull-right-container"> <i
+									class="fa fa-angle-left pull-right"></i>
+								</span>
+							</a>
+							<ul class="treeview-menu">
+							<!--	<li><a href="<?php echo portal_url()?>master"><i
+										class="fa fa-circle-o"></i> Master</a></li>									-->
+							</ul>
+						</li>
+						<li class="treeview">
+							<a href="#"> <i class="fa fa-truck"></i>
+								<span>Shipping</span> <span class="pull-right-container"> <i
+									class="fa fa-angle-left pull-right"></i>
+								</span>
+							</a>
+							<ul class="treeview-menu">
+							<!--	<li><a href="<?php echo portal_url()?>master"><i
+										class="fa fa-circle-o"></i> Master</a></li>									-->
+							</ul>
+						</li>
+						<li class="treeview">
+							<a href="#"> <i class="fa fa-rupee"></i>
+								<span>Payments</span> <span class="pull-right-container"> <i
+									class="fa fa-angle-left pull-right"></i>
+								</span>
+							</a>
+							<ul class="treeview-menu">
+							<!--	<li><a href="<?php echo portal_url()?>master"><i
+										class="fa fa-circle-o"></i> Master</a></li>									-->
+							</ul>
+						</li>
+						<li class="treeview">
+							<a href="#"> <i class="fa fa-dashboard"></i>
+								<span>Leverages</span> <span class="pull-right-container"> <i
+									class="fa fa-angle-left pull-right"></i>
+								</span>
+							</a>
+							<ul class="treeview-menu">
+							<!--	<li><a href="<?php echo portal_url()?>master"><i
+										class="fa fa-circle-o"></i> Master</a></li>									-->
+							</ul>
+						</li>
+						
+						<li class="treeview">
+							<a href="#"> <i class="fa fa-first-order"></i>
+								<span>Consumer Order</span> <span class="pull-right-container"> <i
+									class="fa fa-angle-left pull-right"></i>
+								</span>
+							</a>
+							<ul class="treeview-menu">
+							<!--	<li><a href="<?php echo portal_url()?>master"><i
+										class="fa fa-circle-o"></i> Master</a></li>									-->
+							</ul>
+						</li>
+						<li class="treeview">
+							<a href="#"> <i class="fa fa-life-ring"></i>
+								<span>Add Customer Support</span> <span class="pull-right-container"> <i
+									class="fa fa-angle-left pull-right"></i>
+								</span>
+							</a>
+							<ul class="treeview-menu">
+							<!--	<li><a href="<?php echo portal_url()?>master"><i
+										class="fa fa-circle-o"></i> Master</a></li>									-->
+							</ul>
+						</li>
+						<li class="treeview">
+							<a href="#"> <i class="fa fa-dashboard"></i>
+								<span>Add Product Volume</span> <span class="pull-right-container"> <i
+									class="fa fa-angle-left pull-right"></i>
+								</span>
+							</a>
+							<ul class="treeview-menu">
+							<!--	<li><a href="<?php echo portal_url()?>master"><i
+										class="fa fa-circle-o"></i> Master</a></li>									-->
+							</ul>
+						</li>
+						<li class="treeview">
+							<a href="#"> <i class="fa fa-upload"></i>
+								<span>Upload stocks</span> <span class="pull-right-container"> <i
+									class="fa fa-angle-left pull-right"></i>
+								</span>
+							</a>
+							<ul class="treeview-menu">
+							<!--	<li><a href="<?php echo portal_url()?>master"><i
+										class="fa fa-circle-o"></i> Master</a></li>									-->
+							</ul>
+						</li>
+						<li class="treeview">
+							<a href="#"> <i class="fa fa-dashboard"></i>
+								<span>CC Discount</span> <span class="pull-right-container"> <i
+									class="fa fa-angle-left pull-right"></i>
+								</span>
+							</a>
+							<ul class="treeview-menu">
+							<!--	<li><a href="<?php echo portal_url()?>master"><i
+										class="fa fa-circle-o"></i> Master</a></li>									-->
+							</ul>
+						</li>
+						<li class="treeview">
+							<a href="#"> <i class="fa fa-dashboard"></i>
+								<span>CcCommission</span> 
+							</a>
+						</li>
 				</ul>
 			</section>
 			<!-- /.sidebar -->
